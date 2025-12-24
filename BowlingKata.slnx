@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BowlingGame/BowlingGame.csproj" />
+  <Project Path="BowlingKata.Tests/BowlingGame.Tests.csproj" />
+</Solution>
