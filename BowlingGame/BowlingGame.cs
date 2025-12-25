@@ -12,19 +12,32 @@
             thisBowlingBall++;
 		}
 
-        public int Score()
-        {
-            int score = 0;
-            for (int i = 0; i < maxRolls - 1; i++)
-            {
-                if (i + 1 < maxRolls && rolls[i] + rolls[i + 1] == 10) // Spare
-                {
-                    if (i + 2 < maxRolls)
-                        score += rolls[i + 2];
-                }
-                score += rolls[i];
+		public int Score()
+		{
+			int score = 0;
+			int rollIndex = 0;
+
+			for (int frame = 0; frame < 10; frame++)
+			{
+				if (rolls[rollIndex] == 10) // Strike
+				{
+					// Score = 10 + next two balls
+					score += 10 + rolls[rollIndex + 1] + rolls[rollIndex + 2];
+					rollIndex += 1; // Strike only consumes ONE ball slot
+				}
+				else if (rolls[rollIndex] + rolls[rollIndex + 1] == 10) // Spare
+				{
+					// Score = 10 + next one ball
+					score += 10 + rolls[rollIndex + 2];
+					rollIndex += 2; // Spare consumes TWO ball slots
+				}
+				else // Open Frame
+				{
+					score += rolls[rollIndex] + rolls[rollIndex + 1];
+					rollIndex += 2; // Normal frame consumes TWO ball slots
+				}
 			}
 			return score;
-        }
-    }
+		}
+	}
 }
