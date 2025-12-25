@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Bowling ScoreSheet.xlsx" />
+  </Folder>
   <Project Path="BowlingGame/BowlingGame.csproj" />
   <Project Path="BowlingKata.Tests/BowlingGame.Tests.csproj" />
 </Solution>
