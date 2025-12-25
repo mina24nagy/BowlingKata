@@ -111,6 +111,7 @@ namespace BowlingGame.Tests
 			game.Score().ShouldBe(80);
 		}
 
+		[Fact]
 		public void ATenInTwoFramesIsNotASpare()
 		{
 			//Act
